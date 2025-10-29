@@ -11,7 +11,7 @@
     enable = true;
     device = "nodev";
     efiSupport = true;
-    theme = ./assets/grub-theme
+    theme = ./assets/grub-theme;
   };
   boot.loader.efi.canTouchEfiVariables = true;
 
