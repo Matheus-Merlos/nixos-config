@@ -1,5 +1,13 @@
 { config, pkgs, inputs, ... }:
 
+let
+  starRailTheme = pkgs.fetchFromGitHub {
+    owner = "voidlhf";
+    repo = "StarRailGrubThemes";
+    rev = "20250927-065308";
+    sha256 = "sha256-UfFDYB6VKMF5OPoDSNDhzEoC1EDcpC34C+ebQvjLuvU=";
+  };
+in
 {
   imports = [];
 
@@ -8,7 +16,7 @@
     enable = true;
     device = "nodev";
     efiSupport = true;
-    theme = ./assets/grub-theme;
+    theme = "${starRailTheme}/assets/themes/Evernight";
   };
   boot.loader.efi.canTouchEfiVariables = true;
 
