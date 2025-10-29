@@ -1,18 +1,9 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
-let
-  starRailTheme = pkgs.fetchFromGitHub {
-    owner = "voidlhf";
-    repo = "StarRailGrubThemes";
-    rev = "20250927-065308";
-    sha256 = "sha256-UfFDYB6VKMF5OPoDSNDhzEoC1EDcpC34C+ebQvjLuvU=";
-  };
-in
 {
   imports =
     [
       ./hardware-configuration.nix
-      <home-manager/nixos>
     ];
 
   # Bootloader.
@@ -20,7 +11,7 @@ in
     enable = true;
     device = "nodev";
     efiSupport = true;
-    theme = "${starRailTheme}/assets/themes/Evernight";
+    theme = ./assets/grub-theme
   };
   boot.loader.efi.canTouchEfiVariables = true;
 

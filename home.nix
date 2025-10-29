@@ -1,10 +1,8 @@
-{ configs, pkgs, ... }: 
+{ config, pkgs, inputs, ... }: 
+
 
 let
-  evernightWallpaper = pkgs.fetchurl {
-    url = "https://4kwallpapers.com/images/wallpapers/evernight-honkai-3840x2160-24123.jpg";
-    sha256 = "3kS9bmlBdjsSP3kDNTaPiPe3CiODgU+2VAy57YLlvbQ=";
-  };
+  evernightWallpaper = ./assets/gnome-wallpaper.jpg;
 in
 {
   home.stateVersion = "25.05";
