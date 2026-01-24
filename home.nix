@@ -12,6 +12,7 @@ let
     freon
   ];
   gnomeExtensionIds = map (e: e.extensionUuid) gnomeExtensions;
+  hanabiPkg = (pkgs.callPackage ./gnome-ext/hanabi.nix { }).hanabi;
 in
 {
   home.stateVersion = "25.05";
@@ -19,6 +20,7 @@ in
   home.packages = gnomeExtensions ++ (with pkgs; [
     tokyonight-gtk-theme
     papirus-icon-theme
+    hanabiPkg
   ]);
 
   dconf.settings = {
@@ -41,7 +43,7 @@ in
         "code.desktop"
       ];
 
-      enabled-extensions = gnomeExtensionIds;
+      enabled-extensions = gnomeExtensionIds ++ ["hanabi-extension@jeffshee.github.io"];
     };
 
     "org/gnome/shell/extensions/openbar" = {
