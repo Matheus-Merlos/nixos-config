@@ -1,6 +1,7 @@
 { config, pkgs, inputs, ... }:
 
 let
+  defaultLocale = "pt_BR.UTF-8";
   starRailTheme = pkgs.fetchFromGitHub {
     owner = "voidlhf";
     repo = "StarRailGrubThemes";
@@ -37,17 +38,17 @@ in
   time.timeZone = "America/Sao_Paulo";
 
   i18n = {
-    defaultLocale = "pt_BR.UTF-8";
+    defaultLocale = defaultLocale;
     extraLocaleSettings = {
-      LC_ADDRESS = "pt_BR.UTF-8";
-      LC_IDENTIFICATION = "pt_BR.UTF-8";
-      LC_MEASUREMENT = "pt_BR.UTF-8";
-      LC_MONETARY = "pt_BR.UTF-8";
-      LC_NAME = "pt_BR.UTF-8";
-      LC_NUMERIC = "pt_BR.UTF-8";
-      LC_PAPER = "pt_BR.UTF-8";
-      LC_TELEPHONE = "pt_BR.UTF-8";
-      LC_TIME = "pt_BR.UTF-8";
+      LC_ADDRESS = defaultLocale;
+      LC_IDENTIFICATION = defaultLocale;
+      LC_MEASUREMENT = defaultLocale;
+      LC_MONETARY = defaultLocale;
+      LC_NAME = defaultLocale;
+      LC_NUMERIC = defaultLocale;
+      LC_PAPER = defaultLocale;
+      LC_TELEPHONE = defaultLocale;
+      LC_TIME = defaultLocale;
     };
   };
 
@@ -95,17 +96,6 @@ in
 
     neofetch
     fastfetch
-
-    gnomeExtensions.dash-to-dock
-    gnomeExtensions.blur-my-shell
-    gnomeExtensions.user-themes
-    gnomeExtensions.just-perfection
-    gnomeExtensions.open-bar
-    gnomeExtensions.logo-menu
-    gnomeExtensions.quick-settings-tweaker
-    gnomeExtensions.freon
-    tokyonight-gtk-theme
-    papirus-icon-theme
 
     lm_sensors
     lazydocker
