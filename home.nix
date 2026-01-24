@@ -43,7 +43,7 @@ in
         "code.desktop"
       ];
 
-      enabled-extensions = gnomeExtensionIds
+      enabled-extensions = gnomeExtensionIds;
     };
 
     "org/gnome/desktop/background" = {
