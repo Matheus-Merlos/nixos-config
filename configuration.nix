@@ -8,6 +8,16 @@ let
     rev = "20250927-065308";
     sha256 = "sha256-UfFDYB6VKMF5OPoDSNDhzEoC1EDcpC34C+ebQvjLuvU=";
   };
+
+  gnomeExtensions = with pkgs.gnomeExtensions; [
+    dash-to-dock
+    blur-my-shell
+    user-themes
+    just-perfection
+    open-bar
+    logo-menu
+    freon
+  ];
 in
 {
   imports = [];
@@ -88,7 +98,7 @@ in
     enable = true;
   };
 
-  environment.systemPackages = with pkgs; [
+  environment.systemPackages = gnomeExtensions ++ (with pkgs; [
     firefox
     kitty
     fish
@@ -115,7 +125,7 @@ in
 
     # Para estudos
     obsidian
-  ];
+  ]);
 
   environment.gnome.excludePackages = with pkgs; [
     geary
