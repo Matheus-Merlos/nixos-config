@@ -326,7 +326,7 @@ in
       winbwidth = 1.0;
       window-hint = 0;
       wmax-hbarhint = false;
-      wmaxbar = true;
+      wmaxbar = false;
     };
   };
 
