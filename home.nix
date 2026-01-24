@@ -13,7 +13,7 @@ let
     logo-menu
     freon
   ];
-  gnomeExtensionIds = map (e: e.extensionUuid) extensions;
+  gnomeExtensionIds = map (e: e.extensionUuid) gnomeExtensions;
 in
 {
   home.stateVersion = "25.05";
