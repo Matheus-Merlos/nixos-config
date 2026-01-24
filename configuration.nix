@@ -10,57 +10,58 @@ let
 in
 {
   imports = [];
+  system.stateVersion = "25.05";
 
   # Bootloader.
-  boot.loader.grub = {
-    enable = true;
-    device = "nodev";
-    efiSupport = true;
-    theme = "${starRailTheme}/assets/themes/Evernight";
+  boot.loader = {
+    grub = {
+      enable = true;
+      device = "nodev";
+      efiSupport = true;
+      theme = "${starRailTheme}/assets/themes/Evernight";
+    };
+    efi.canTouchEfiVariables = true;
   };
-  boot.loader.efi.canTouchEfiVariables = true;
-
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  networking.hostName = "nixos";
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  networking = {
+    hostName = "nixos";
+    networkmanager = {
+      enable = true;
+    };
+  };
 
   nixpkgs.config.allowUnfree = true;
 
-  # Enable networking
-  networking.networkmanager.enable = true;
 
-  # Set your time zone.
   time.timeZone = "America/Sao_Paulo";
 
-  # Select internationalisation properties.
-  i18n.defaultLocale = "pt_BR.UTF-8";
-
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "pt_BR.UTF-8";
-    LC_IDENTIFICATION = "pt_BR.UTF-8";
-    LC_MEASUREMENT = "pt_BR.UTF-8";
-    LC_MONETARY = "pt_BR.UTF-8";
-    LC_NAME = "pt_BR.UTF-8";
-    LC_NUMERIC = "pt_BR.UTF-8";
-    LC_PAPER = "pt_BR.UTF-8";
-    LC_TELEPHONE = "pt_BR.UTF-8";
-    LC_TIME = "pt_BR.UTF-8";
+  i18n = {
+    defaultLocale = "pt_BR.UTF-8";
+    extraLocaleSettings = {
+      LC_ADDRESS = "pt_BR.UTF-8";
+      LC_IDENTIFICATION = "pt_BR.UTF-8";
+      LC_MEASUREMENT = "pt_BR.UTF-8";
+      LC_MONETARY = "pt_BR.UTF-8";
+      LC_NAME = "pt_BR.UTF-8";
+      LC_NUMERIC = "pt_BR.UTF-8";
+      LC_PAPER = "pt_BR.UTF-8";
+      LC_TELEPHONE = "pt_BR.UTF-8";
+      LC_TIME = "pt_BR.UTF-8";
+    };
   };
 
-  services.xserver.enable = true;
-
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
-
-  services.xserver.xkb = {
-    layout = "br";
-    variant = "";
+  services.xserver = {
+    enable = true;
+    displayManager.gdm.enable = true;
+    desktopManager.gnome.enable = true;
+    xkb = {
+      layout = "br";
+      variant = "";
+    };
   };
 
   console.keyMap = "br-abnt2";
-
-  services.printing.enable = true;
 
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
@@ -75,7 +76,6 @@ in
     isNormalUser = true;
     description = "matheus";
     extraGroups = [ "networkmanager" "wheel" "docker" ];
-    packages = with pkgs; [];
   };
   home-manager.users.matheus = {
     imports = [ ./home.nix ];
@@ -83,13 +83,12 @@ in
 
   home-manager.backupFileExtension = "backup";
 
-  programs.firefox.enable = true;
-
   virtualisation.docker = {
     enable = true;
   };
 
   environment.systemPackages = with pkgs; [
+    firefox
     kitty
     fish
     tmux
@@ -146,6 +145,4 @@ in
     baobab
     gnome-logs
   ];
-
-  system.stateVersion = "25.05";
 }
