@@ -76,7 +76,7 @@ in
 
     conky.text = [[
     ''${color1}''${font JetBrainsMono Nerd Font:weight=Bold:size=50}''${time %H:%M}''${font}
-    ''${voffset -15}''${color2}''${font JetBrainsMono Nerd Font:weight=Bold:size=15}''${time %d.%m.%Y %A}''${font}
+    ''${voffset 10}''${color2}''${font JetBrainsMono Nerd Font:weight=Bold:size=15}''${time %d.%m.%Y %A}''${font}
     ''${voffset 10}
     ''${color2}''${font :weight=Bold}WEATHER''${font} ''${hr 2}
     ''${color}Francisco Beltrão: ''${execi 600 curl -s "wttr.in/Francisco+Beltrao?format=%C+%t"}
@@ -87,9 +87,9 @@ in
     Kernel:''${alignr}''${kernel}
     Uptime:''${alignr}''${uptime}
     
-    ''${color2}IP Local:''${color} ''${addr wlan0}
-    ''${color2}Up:''${color} ''${upspeed wlan0} ''${alignr}''${color2}Down:''${color} ''${downspeed wlan0}
-    ''${upspeedgraph wlan0 30,145 3b4261 7dcfff -t} ''${alignr}''${downspeedgraph wlan0 30,145 3b4261 7dcfff -t}
+    ''${color2}IP Local:''${color} ''${addr wlo1}
+    ''${color2}Up:''${color} ''${upspeed wlo1} ''${alignr}''${color2}Down:''${color} ''${downspeed wlo1}
+    ''${upspeedgraph wlo1 30,145 3b4261 7dcfff -t} ''${alignr}''${downspeedgraph wlo1 30,145 3b4261 7dcfff -t}
 
     ''${voffset 10}''${color2}''${font :weight=Bold}CPU (i5-1135G7)''${font} ''${hr 2}
     ''${color}Usage: ''${cpu cpu0}% ''${alignr}Freq: ''${freq_g}GHz
