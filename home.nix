@@ -89,9 +89,10 @@ in
     Kernel:''${alignr}''${kernel}
     Uptime:''${alignr}''${uptime}
     
-    ''${color2}IP Local:''${color} ''${addr wlo1}
-    ''${color2}Up:''${color} ''${upspeed wlo1} ''${alignr}''${color2}Down:''${color} ''${downspeed wlo1}
-    ''${upspeedgraph wlo1 30,145 3b4261 7dcfff -t} ''${alignr}''${downspeedgraph wlo1 30,145 3b4261 7dcfff -t}
+    ''${color2}Interface:''${color} ''${gw_iface}
+    ''${color2}IP Local:''${color} ''${addr ''${gw_iface}}
+    ''${color2}Up:''${color} ''${upspeed ''${gw_iface}} ''${alignr}''${color2}Down:''${color} ''${downspeed ''${gw_iface}}
+    ''${upspeedgraph ''${gw_iface} 30,145 3b4261 7dcfff -t} ''${alignr}''${downspeedgraph ''${gw_iface} 30,145 3b4261 7dcfff -t}
 
     ''${voffset 10}''${color2}''${font :weight=Bold}CPU (i5-1135G7)''${font} ''${hr 2}
     ''${color}Usage: ''${cpu cpu0}% ''${alignr}Freq: ''${freq_g}GHz
