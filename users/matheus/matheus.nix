@@ -70,7 +70,7 @@ in
         uppercase = false,
         use_spacer = 'none',
         
-        color1 = 'ff9e64',
+        color1 = '0022f7',
         color2 = '7dcfff',
         color3 = 'bb9af7',
         color4 = 'f7768e',
