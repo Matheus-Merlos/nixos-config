@@ -150,6 +150,7 @@ in
         "org.gnome.Nautilus.desktop"
         "discord.desktop"
         "code.desktop"
+        "obsidian.desktop"
       ];
 
       enabled-extensions = gnomeExtensionIds ++ ["hanabi-extension@jeffshee.github.io"];
