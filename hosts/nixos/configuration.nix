@@ -89,7 +89,7 @@ in
     extraGroups = [ "networkmanager" "wheel" "docker" ];
   };
   home-manager.users.matheus = {
-    imports = [ ./users/matheus.nix ];
+    imports = [ ../../users/matheus/matheus.nix ];
   };
 
   home-manager.backupFileExtension = "backup";

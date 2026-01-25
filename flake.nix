@@ -19,7 +19,7 @@
       };
       modules = [
         home-manager.nixosModules.home-manager
-        ./configuration.nix
+        ./hosts/nixos/configuration.nix
         ./hosts/nixos/hardware-configuration.nix
       ];
     };

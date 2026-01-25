@@ -14,8 +14,8 @@ let
     coverflow-alt-tab
   ];
   gnomeExtensionIds = map (e: e.extensionUuid) gnomeExtensions;
-  hanabiPkg = (pkgs.callPackage ../gnome-ext/hanabi.nix { }).hanabi;
-  mornyeChibiPng = ../assets/mornye-chibi.png;
+  hanabiPkg = (pkgs.callPackage ../../pkgs/hanabi.nix { }).hanabi;
+  mornyeChibiPng = ./assets/mornye-chibi.png;
 in
 {
   home.stateVersion = "25.05";
