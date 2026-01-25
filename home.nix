@@ -11,6 +11,7 @@ let
     logo-menu
     freon
     show-desktop-button
+    coverflow-alt-tab
   ];
   gnomeExtensionIds = map (e: e.extensionUuid) gnomeExtensions;
   hanabiPkg = (pkgs.callPackage ./gnome-ext/hanabi.nix { }).hanabi;
