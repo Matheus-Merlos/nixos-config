@@ -20,8 +20,12 @@ in
 
   home.packages = gnomeExtensions ++ (with pkgs; [
     tokyonight-gtk-theme
+    catppuccin-gtk
     papirus-icon-theme
     hanabiPkg
+
+    imagemagick
+    chafa
   ]);
 
   dconf.settings = {
@@ -345,6 +349,11 @@ in
       enable = true;
       extraConfig = ''
         set-option -g default-shell ${pkgs.fish}/bin/fish
+
+        set -g allow-passthrough on
+        set -ga update-environment TERM
+        set -ga update-environment TERM_PROGRAM
+        set -g default-terminal "xterm-256color"
       '';
     };
 
@@ -381,27 +390,27 @@ in
         dynamic_background_opacity = "yes";
 
         # Cores
-        background           = "#000000";
-        foreground           = "#afc2c2";
+        background           = "#080b14";
+        foreground           = "#e2e8f0";
         cursor               = "#ffffff";
-        selection_background = "#7cbeff";
-        color0               = "#bbcbcc";
-        color8               = "#ffffff";
+        selection_background = "#3b82f6";
+        color0               = "#141b2d";
+        color8               = "#475569";
         color1               = "#ff2f2f";
         color9               = "#ff2f2f";
         color2               = "#549a6f";
         color10              = "#549a6f";
         color3               = "#ccac00";
         color11              = "#ccac00";
-        color4               = "#0099cc";
-        color12              = "#0099cc";
+        color4               = "#3b82f6";
+        color12              = "#60a5fa";
         color5               = "#cc68c8";
         color13              = "#cc68c8";
-        color6               = "#79c4cc";
-        color14              = "#79c4cc";
+        color6               = "#5eead4";
+        color14              = "#99f6e4";
         color7               = "#000000";
         color15              = "#000000";
-        selection_foreground = "#000000";
+        selection_foreground = "#080b14";
       };
     };
 
@@ -409,12 +418,17 @@ in
       enable = true;
       settings = {
         logo = {
-          source = mornyeChibiPng;
-          type = "kitty";
+          source = "${mornyeChibiPng}";
+          type = "chafa";
           height = 18;
           padding = {
             top = 2;
+            right = 2;
           };
+        };
+
+        chafa = {
+          graphics = "kitty";
         };
 
         display = {
