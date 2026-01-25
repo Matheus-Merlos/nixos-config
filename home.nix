@@ -410,7 +410,7 @@ in
       settings = {
         logo = {
           source = mornyeChibiPng;
-          type = kitty;
+          type = "kitty";
           height = 18;
           padding = {
             top = 2;
