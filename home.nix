@@ -13,6 +13,7 @@ let
   ];
   gnomeExtensionIds = map (e: e.extensionUuid) gnomeExtensions;
   hanabiPkg = (pkgs.callPackage ./gnome-ext/hanabi.nix { }).hanabi;
+  mornyeChibiPng = ./assets/mornye-chibi.png
 in
 {
   home.stateVersion = "25.05";
@@ -407,6 +408,15 @@ in
     fastfetch = {
       enable = true;
       settings = {
+        logo = {
+          source = mornyeChibiPng;
+          type = kitty;
+          height = 18;
+          padding = {
+            top = 2;
+          };
+        };
+
         display = {
           separator = " ➜  ";
         };
