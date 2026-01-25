@@ -28,6 +28,96 @@ in
     chafa
   ]);
 
+  xdg.configFile."conky/conky.conf".text = ''
+    conky.config = {
+        alignment = 'top_left',
+        background = false,
+        border_width = 1,
+        cpu_avg_samples = 2,
+        default_color = 'c0caf5',
+        default_outline_color = 'white',
+        default_shade_color = 'white',
+        double_buffer = true,
+        draw_borders = false,
+        draw_graph_borders = true,
+        draw_outline = false,
+        draw_shades = false,
+        use_xft = true,
+        font = 'JetBrainsMono Nerd Font:size=10',
+        gap_x = 30,
+        gap_y = 50,
+        minimum_height = 5,
+        minimum_width = 300,
+        net_avg_samples = 2,
+        no_buffers = true,
+        out_to_console = false,
+        out_to_ncurses = false,
+        out_to_stderr = false,
+        out_to_x = true,
+        own_window = true,
+        own_window_class = 'Conky',
+        own_window_type = 'normal',
+        own_window_transparent = false,
+        own_window_argb_visual = true,
+        own_window_argb_value = 150,
+        own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+        show_graph_range = false,
+        show_graph_scale = false,
+        stippled_borders = 0,
+        update_interval = 1.0,
+        uppercase = false,
+        use_spacer = 'none',
+        
+        color1 = 'ff9e64',
+        color2 = '7dcfff',
+        color3 = 'bb9af7',
+        color4 = 'f7768e',
+    }
+
+    conky.text = [[
+    ''${color1}''${font JetBrainsMono Nerd Font:weight=Bold:size=50}''${time %H:%M}''${font}
+    ''${voffset -15}''${color2}''${font JetBrainsMono Nerd Font:weight=Bold:size=15}''${time %d.%m.%Y %A}''${font}
+    ''${voffset 10}
+    ''${color2}''${font :weight=Bold}WEATHER''${font} ''${hr 2}
+    ''${color}Francisco Beltrão: ''${execi 600 curl -s "wttr.in/Francisco+Beltrao?format=%C+%t"}
+    Wind: ''${execi 600 curl -s "wttr.in/Francisco+Beltrao?format=%w"}
+    
+    ''${voffset 10}''${color2}''${font :weight=Bold}SYSTEM / NET''${font} ''${hr 2}
+    ''${color}Host:''${alignr}''${nodename}
+    Kernel:''${alignr}''${kernel}
+    Uptime:''${alignr}''${uptime}
+    
+    ''${color2}IP Local:''${color} ''${addr wlan0}
+    ''${color2}Up:''${color} ''${upspeed wlan0} ''${alignr}''${color2}Down:''${color} ''${downspeed wlan0}
+    ''${upspeedgraph wlan0 30,145 3b4261 7dcfff -t} ''${alignr}''${downspeedgraph wlan0 30,145 3b4261 7dcfff -t}
+
+    ''${voffset 10}''${color2}''${font :weight=Bold}CPU (i5-1135G7)''${font} ''${hr 2}
+    ''${color}Usage: ''${cpu cpu0}% ''${alignr}Freq: ''${freq_g}GHz
+    ''${color3}''${cpubar cpu0 10, 300}
+    ''${voffset 5}
+    ''${color}Core 1: ''${cpu cpu1}% ''${cpubar cpu1 6, 60}  ''${alignr}Core 2: ''${cpu cpu2}% ''${cpubar cpu2 6, 60}
+    Core 3: ''${cpu cpu3}% ''${cpubar cpu3 6, 60}  ''${alignr}Core 4: ''${cpu cpu4}% ''${cpubar cpu4 6, 60}
+    Core 5: ''${cpu cpu5}% ''${cpubar cpu5 6, 60}  ''${alignr}Core 6: ''${cpu cpu6}% ''${cpubar cpu6 6, 60}
+    Core 7: ''${cpu cpu7}% ''${cpubar cpu7 6, 60}  ''${alignr}Core 8: ''${cpu cpu8}% ''${cpubar cpu8 6, 60}
+
+    ''${voffset 10}''${color2}''${font :weight=Bold}MEMORY / DISK''${font} ''${hr 2}
+    ''${color}RAM: ''${mem} / ''${memmax} ''${alignr}''${memperc}%
+    ''${color3}''${membar 10, 300}
+    
+    ''${color}Swap: ''${swap} / ''${swapmax}
+    ''${color3}''${swapbar 10, 300}
+    
+    ''${color}Root: ''${fs_used /} / ''${fs_size /}
+    ''${color3}''${fs_bar 10, 300 /}
+
+    ''${voffset 10}''${color2}''${font :weight=Bold}TOP PROCESSES''${font} ''${hr 2}
+    ''${color}''${top name 1} ''${alignr}''${top cpu 1}%
+    ''${color}''${top name 2} ''${alignr}''${top cpu 2}%
+    ''${color}''${top name 3} ''${alignr}''${top cpu 3}%
+    ''${color}''${top name 4} ''${alignr}''${top cpu 4}%
+    ]]
+  '';
+
   dconf.settings = {
     "org/gnome/desktop/interface" = {
       color-scheme = "prefer-dark";
