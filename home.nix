@@ -118,6 +118,17 @@ in
     ]]
   '';
 
+  xdg.configFile."autostart/conky.desktop".text = ''
+    [Desktop Entry]
+    Type=Application
+    Name=Conky
+    Comment=System Monitor
+    # Inicia o Conky como daemon e espera 5 segundos para garantir que o GNOME carregou
+    Exec=${pkgs.conky}/bin/conky --daemonize --pause=5
+    StartupNotify=false
+    Terminal=false
+  '';
+
   dconf.settings = {
     "org/gnome/desktop/interface" = {
       color-scheme = "prefer-dark";
