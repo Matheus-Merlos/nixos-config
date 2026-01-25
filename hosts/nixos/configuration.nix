@@ -107,6 +107,8 @@ in
     neofetch
     fastfetch
 
+    youtube-music
+
     lm_sensors
     lazydocker
     git
