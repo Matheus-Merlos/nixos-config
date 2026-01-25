@@ -13,7 +13,7 @@ let
   ];
   gnomeExtensionIds = map (e: e.extensionUuid) gnomeExtensions;
   hanabiPkg = (pkgs.callPackage ./gnome-ext/hanabi.nix { }).hanabi;
-  mornyeChibiPng = ./assets/mornye-chibi.png
+  mornyeChibiPng = ./assets/mornye-chibi.png;
 in
 {
   home.stateVersion = "25.05";
