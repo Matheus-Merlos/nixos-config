@@ -30,6 +30,24 @@ in
     chafa
   ]);
 
+  xdg.desktopEntries."youtube-music" = {
+    name = "YouTube Music";
+    genericName = "Music Player";
+    comment = "YouTube Music Desktop App";
+    
+    exec = "${pkgs.ytmdesktop}/bin/ytmdesktop %U"; 
+    
+    terminal = false;
+    categories = [ "Audio" "Music" "Player" ];
+    mimeType = [ "x-scheme-handler/ytmd" ];
+  
+    startupNotify = true;
+    
+    settings = {
+      StartupWMClass = "YouTube Music";
+    };
+  };
+
   xdg.configFile."conky/conky.conf".text = ''
     conky.config = {
         alignment = 'top_left',
@@ -151,6 +169,7 @@ in
         "discord.desktop"
         "code.desktop"
         "obsidian.desktop"
+        "youtube-music.desktop"
       ];
 
       enabled-extensions = gnomeExtensionIds ++ ["hanabi-extension@jeffshee.github.io"];

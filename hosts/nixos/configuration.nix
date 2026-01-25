@@ -107,7 +107,7 @@ in
     neofetch
     fastfetch
 
-    youtube-music
+    ytmdesktop
 
     lm_sensors
     lazydocker
