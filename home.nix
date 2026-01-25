@@ -10,6 +10,7 @@ let
     open-bar
     logo-menu
     freon
+    show-desktop-button
   ];
   gnomeExtensionIds = map (e: e.extensionUuid) gnomeExtensions;
   hanabiPkg = (pkgs.callPackage ./gnome-ext/hanabi.nix { }).hanabi;
