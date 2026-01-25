@@ -113,6 +113,7 @@ in
     vscode
     discord
     btop
+    tree
 
     # Para desenvolvimento
     nodejs_22
