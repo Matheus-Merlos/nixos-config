@@ -138,6 +138,7 @@ in
     gnome-tweaks
 
     conky
+    gcc
   ]);
 
   environment.gnome.excludePackages = with pkgs; [
