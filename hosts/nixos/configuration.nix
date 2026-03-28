@@ -125,6 +125,10 @@ in
     nodePackages_latest.ts-node
     awscli2
     python314
+    go
+    gopls
+    go-tools
+    delve
 
     # Para estudos
     obsidian
