@@ -144,7 +144,7 @@ in
     conky
     gcc
 
-    teams
+    teams-for-linux
   ]);
 
   environment.gnome.excludePackages = with pkgs; [
