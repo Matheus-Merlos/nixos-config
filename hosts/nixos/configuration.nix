@@ -143,6 +143,8 @@ in
 
     conky
     gcc
+
+    teams
   ]);
 
   environment.gnome.excludePackages = with pkgs; [
