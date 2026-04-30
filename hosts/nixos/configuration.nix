@@ -145,6 +145,7 @@ in
     gcc
 
     obs-studio
+    vlc
   ]);
 
   environment.gnome.excludePackages = with pkgs; [
