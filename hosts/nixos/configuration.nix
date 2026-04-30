@@ -144,7 +144,7 @@ in
     conky
     gcc
 
-    teams-for-linux
+    obs-studio
   ]);
 
   environment.gnome.excludePackages = with pkgs; [
