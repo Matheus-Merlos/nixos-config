@@ -146,6 +146,8 @@ in
 
     obs-studio
     vlc
+
+    steam
   ]);
 
   environment.gnome.excludePackages = with pkgs; [
