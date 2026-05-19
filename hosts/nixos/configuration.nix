@@ -168,4 +168,15 @@ in
     baobab
     gnome-logs
   ];
+
+  programs = {
+    steam = {
+      enable = true;
+      dedicatedServer.openFirewall = true;
+
+      extraCompatPackages = with pkgs; [
+        proton-ge-bin
+      ];
+    };
+  };
 }
