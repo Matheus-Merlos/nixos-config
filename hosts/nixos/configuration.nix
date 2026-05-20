@@ -148,6 +148,8 @@ in
     vlc
 
     steam
+
+    swi-prolog
   ]);
 
   environment.gnome.excludePackages = with pkgs; [
