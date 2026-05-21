@@ -156,6 +156,8 @@ in
     steam
 
     swi-prolog
+
+    xboxdrv
   ]);
 
   environment.gnome.excludePackages = with pkgs; [
@@ -189,5 +191,14 @@ in
     };
   };
 
-  hardware.xboxdrv.enable = true;
+  systemd.services.xboxdrv = {
+    enable = true;
+    description = "Xbox controller driver daemon (xboxdrv)";
+    wantedBy = [ "multi-user.target" ];
+    serviceConfig = {
+      ExecStart = "${pkgs.xboxdrv}/bin/xboxdrv --daemon --detach-kernel-driver --silent --mimic-xpad";
+      Restart = "always";
+      User = "root";
+    };
+  };
 }
