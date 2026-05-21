@@ -35,12 +35,6 @@ in
   };
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  boot.kernelParams = [ 
-    "usbcore.autosuspend=-1" 
-    "usbcore.old_scheme_first=1" 
-  ];
-  boot.blacklistedKernelModules = [ "xpad" ];
-
   networking = {
     hostName = "nixos";
     networkmanager = {
@@ -156,8 +150,6 @@ in
     steam
 
     swi-prolog
-
-    xboxdrv
   ]);
 
   environment.gnome.excludePackages = with pkgs; [
@@ -183,22 +175,10 @@ in
     steam = {
       enable = true;
       dedicatedServer.openFirewall = true;
-      extest.enable = true;
 
       extraCompatPackages = with pkgs; [
         proton-ge-bin
       ];
-    };
-  };
-
-  systemd.services.xboxdrv = {
-    enable = true;
-    description = "Xbox controller driver daemon (xboxdrv)";
-    wantedBy = [ "multi-user.target" ];
-    serviceConfig = {
-      ExecStart = "${pkgs.xboxdrv}/bin/xboxdrv --daemon --detach-kernel-driver --silent --mimic-xpad";
-      Restart = "always";
-      User = "root";
     };
   };
 }
