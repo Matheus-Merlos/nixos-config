@@ -182,6 +182,4 @@ in
       ];
     };
   };
-
-  hardware.xboxdrv.enable = true;
 }
