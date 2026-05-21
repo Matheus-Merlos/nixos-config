@@ -39,6 +39,7 @@ in
     "usbcore.autosuspend=-1" 
     "usbcore.old_scheme_first=1" 
   ];
+  boot.blacklistedKernelModules = [ "xpad" ];
 
   networking = {
     hostName = "nixos";
@@ -187,4 +188,6 @@ in
       ];
     };
   };
+
+  hardware.xboxdrv.enable = true;
 }
