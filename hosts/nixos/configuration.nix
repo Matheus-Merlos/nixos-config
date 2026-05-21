@@ -35,6 +35,11 @@ in
   };
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
+  boot.kernelParams = [ 
+    "usbcore.autosuspend=-1" 
+    "usbcore.old_scheme_first=1" 
+  ];
+
   networking = {
     hostName = "nixos";
     networkmanager = {
