@@ -175,6 +175,7 @@ in
     steam = {
       enable = true;
       dedicatedServer.openFirewall = true;
+      extest.enable = true;
 
       extraCompatPackages = with pkgs; [
         proton-ge-bin
@@ -182,6 +183,5 @@ in
     };
   };
 
-  hardware.controllers.xbox.enable = true;
-  hardware.graphics.enable = true;
+  hardware.xboxdrv.enable = true;
 }
