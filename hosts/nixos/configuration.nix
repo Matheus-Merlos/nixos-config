@@ -181,4 +181,7 @@ in
       ];
     };
   };
+
+  hardware.controllers.xbox.enable = true;
+  hardware.graphics.enable = true;
 }
