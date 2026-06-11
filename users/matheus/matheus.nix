@@ -466,15 +466,16 @@ in
     git = {
       enable = true;
 
-      userName = "Matheus-Merlos";
-      userEmail = "matheusazrmerlos@gmail.com";
-      extraConfig = {
+      settings = {
         init.defaultBranch = "master";
         pull.rebase = false;
         core.editor = "code --wait";
         push.autoSetupRemote = true;
+        user = {
+          name = "Matheus-Merlos";
+          email = "matheusazrmerlos@gmail.com";
+        };
       };
-      
     };
 
     kitty = {
