@@ -171,6 +171,7 @@ in
     steam
 
     swi-prolog
+    zip
     unzip
 
     onlyoffice-desktopeditors
