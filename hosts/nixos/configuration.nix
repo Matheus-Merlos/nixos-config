@@ -20,8 +20,8 @@ let
   ];
 
   codecPro = pkgs.runCommand "codec-pro" {} ''
-    mkdir -p $out/share/fonts/truetype # ou truetype se for .ttf
-    cp -r ${./fonts/codec-pro}/* $out/share/fonts/opentype/
+    mkdir -p $out/share/fonts/truetype
+    cp -r ${./fonts/codec-pro}/* $out/share/fonts/truetype/
   '';
 in
 {
