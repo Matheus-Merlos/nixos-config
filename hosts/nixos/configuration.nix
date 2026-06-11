@@ -137,6 +137,8 @@ in
     discord
     btop
     tree
+    zip
+    unzip
 
     # Para desenvolvimento
     nodejs_22
@@ -150,6 +152,7 @@ in
     gopls
     go-tools
     delve
+    swi-prolog
 
     # Para estudos
     obsidian
@@ -169,10 +172,6 @@ in
     vlc
 
     steam
-
-    swi-prolog
-    zip
-    unzip
 
     onlyoffice-desktopeditors
   ]);
