@@ -145,7 +145,6 @@ in
     terraform
     terraformer
     tfswitch
-    nodePackages_latest.ts-node
     awscli2
     python314
     go
