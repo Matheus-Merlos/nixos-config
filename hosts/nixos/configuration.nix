@@ -153,11 +153,6 @@ in
     delve
     swi-prolog
     onlyoffice-desktopeditors
-    cargo
-    rustc
-    rustfmt
-    rustPackages.clippy
-    rust-analyzer
 
     # Para estudos
     obsidian
