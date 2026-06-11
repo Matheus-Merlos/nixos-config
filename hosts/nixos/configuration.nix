@@ -125,7 +125,6 @@ in
     fish
     tmux
 
-    neofetch
     fastfetch
 
     youtube-music
