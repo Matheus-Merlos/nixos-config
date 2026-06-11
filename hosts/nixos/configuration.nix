@@ -139,6 +139,7 @@ in
     tree
     zip
     unzip
+    gcc
 
     # Para desenvolvimento
     nodejs_22
@@ -153,6 +154,7 @@ in
     go-tools
     delve
     swi-prolog
+    onlyoffice-desktopeditors
 
     # Para estudos
     obsidian
@@ -166,14 +168,11 @@ in
     gnome-tweaks
 
     conky
-    gcc
 
     obs-studio
     vlc
 
     steam
-
-    onlyoffice-desktopeditors
   ]);
 
   environment.gnome.excludePackages = with pkgs; [
