@@ -150,6 +150,8 @@ in
     steam
 
     swi-prolog
+
+    onlyoffice-desktopeditors
   ]);
 
   environment.gnome.excludePackages = with pkgs; [
