@@ -18,6 +18,11 @@ let
     logo-menu
     freon
   ];
+
+  codecPro = pkgs.runCommand "codec-pro" {} ''
+    mkdir -p $out/share/fonts/opentype # ou truetype se for .ttf
+    cp -r ${./fonts/codec-pro}/* $out/share/fonts/opentype/
+  '';
 in
 {
   imports = [];
@@ -97,6 +102,10 @@ in
   virtualisation.docker = {
     enable = true;
   };
+
+  fonts.packages = with pkgs; [
+    codecPro
+  ];
 
   environment.systemPackages = gnomeExtensions ++ (with pkgs; [
     firefox
