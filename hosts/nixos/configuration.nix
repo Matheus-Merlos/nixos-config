@@ -28,6 +28,11 @@ let
     mkdir -p $out/share/fonts/truetype
     cp -r ${./fonts/codec-pro}/* $out/share/fonts/truetype/
   '';
+
+  syncopate = pkgs.runCommand "syncopate" {} ''
+    mkdir -p $out/share/fonts/truetype
+    cp -r ${./fonts/syncopate}/* $out/share/fonts/truetype/
+  '';
 in
 {
   imports = [];
@@ -111,6 +116,7 @@ in
   fonts.packages = with pkgs; [
     codecPro
     arial
+    syncopate
   ];
 
   environment.systemPackages = gnomeExtensions ++ (with pkgs; [
