@@ -19,6 +19,11 @@ let
     freon
   ];
 
+  arial = pkgs.runCommand "arial" {} ''
+    mkdir -p $out/share/fonts/truetype
+    cp -r ${./fonts/arial}/* $out/share/fonts/truetype/
+  '';
+
   codecPro = pkgs.runCommand "codec-pro" {} ''
     mkdir -p $out/share/fonts/truetype
     cp -r ${./fonts/codec-pro}/* $out/share/fonts/truetype/
@@ -105,6 +110,7 @@ in
 
   fonts.packages = with pkgs; [
     codecPro
+    arial
   ];
 
   environment.systemPackages = gnomeExtensions ++ (with pkgs; [
