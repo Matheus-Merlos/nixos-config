@@ -153,7 +153,7 @@ in
     delve
     swi-prolog
     onlyoffice-desktopeditors
-    pip
+    pip3
 
     # Para estudos
     obsidian
