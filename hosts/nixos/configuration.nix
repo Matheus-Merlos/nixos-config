@@ -153,7 +153,6 @@ in
     delve
     swi-prolog
     onlyoffice-desktopeditors
-    pip3
 
     # Para estudos
     obsidian
@@ -172,6 +171,7 @@ in
     vlc
 
     steam
+    semgrep
   ]);
 
   environment.gnome.excludePackages = with pkgs; [
