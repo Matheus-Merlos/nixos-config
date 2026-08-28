@@ -141,6 +141,7 @@ in
     gcc
 
     # Para desenvolvimento
+    openjdk25
     nodejs_22
     terraform
     terraformer
