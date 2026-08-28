@@ -133,6 +133,7 @@ in
     lazydocker
     git
     vscode
+    jetbrains.idea-oss
     discord
     btop
     tree
