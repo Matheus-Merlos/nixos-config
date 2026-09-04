@@ -83,7 +83,7 @@ in
     desktopManager.gnome.enable = true;
     xkb = {
       layout = "br";
-      variant = "";
+      variant = "nodeadkeys";
     };
   };
 
