@@ -83,7 +83,7 @@ in
     desktopManager.gnome.enable = true;
     xkb = {
       layout = "br";
-      variant = "nodeadkeys";
+      variant = "";
     };
   };
 
@@ -118,6 +118,12 @@ in
     arial
     syncopate
   ];
+
+  environment.sessionVariables = {
+    GTK_IM_MODULE = "simple";
+    QT_IM_MODULE = "simple";
+    XMODIFIERS = "@im=none";
+  };
 
   environment.systemPackages = gnomeExtensions ++ (with pkgs; [
     firefox
