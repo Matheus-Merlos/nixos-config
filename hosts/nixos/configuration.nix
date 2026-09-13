@@ -172,6 +172,7 @@ in
     obs-studio
     vlc
 
+    telegram-desktop
     steam
     semgrep
   ]);
