@@ -154,6 +154,7 @@ in
     go-tools
     delve
     swi-prolog
+    insomnia
     onlyoffice-desktopeditors
 
     # Para estudos
