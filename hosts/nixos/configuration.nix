@@ -176,6 +176,9 @@ in
 
     telegram-desktop
     steam
+
+    checkov
+    gitleaks
     semgrep
   ]);
 
