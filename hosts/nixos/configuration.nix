@@ -157,6 +157,8 @@ in
     insomnia
     onlyoffice-desktopeditors
 
+    kubernetes-helm
+
     # Para estudos
     obsidian
 
