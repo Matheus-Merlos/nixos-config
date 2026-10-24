@@ -158,6 +158,7 @@ in
     onlyoffice-desktopeditors
 
     kubernetes-helm
+    gnumake
 
     # Para estudos
     obsidian
