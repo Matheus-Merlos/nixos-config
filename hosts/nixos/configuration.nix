@@ -161,6 +161,8 @@ in
     kubernetes-helm
     gnumake
 
+    jq
+
     # Para estudos
     obsidian
 
