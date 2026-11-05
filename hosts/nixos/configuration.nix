@@ -142,6 +142,7 @@ in
     gcc
 
     # Para desenvolvimento
+    uv
     openjdk25
     nodejs_22
     terraform
