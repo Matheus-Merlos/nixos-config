@@ -157,7 +157,7 @@ in
     swi-prolog
     insomnia
     onlyoffice-desktopeditors
-    kiro
+    claude-code
 
     kubernetes-helm
     gnumake
