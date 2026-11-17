@@ -158,7 +158,6 @@ in
     insomnia
     onlyoffice-desktopeditors
     claude-code
-    icu
 
     kubernetes-helm
     gnumake
@@ -215,6 +214,34 @@ in
 
       extraCompatPackages = with pkgs; [
         proton-ge-bin
+      ];
+    };
+
+    nix-ld = {
+      enable = true;
+      libraries = with pkgs; [
+        # .NET
+        icu
+        openssl
+        zlib
+        krb5
+        stdenv.cc.cc.lib
+        # SkiaSharp / Avalonia
+        fontconfig
+        freetype
+        expat
+        libGL
+        xorg.libX11
+        xorg.libICE
+        xorg.libSM
+        xorg.libXcursor
+        xorg.libXrandr
+        xorg.libXi
+        xorg.libXext
+        xorg.libXrender
+        # certificados do navegador
+        nss
+        nspr
       ];
     };
   };
