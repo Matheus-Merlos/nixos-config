@@ -30,6 +30,14 @@ in
     chafa
   ]);
 
+  home.file.".mozilla/native-messaging-hosts/com.lacunasoftware.webpki.json".text = builtins.toJSON {
+    name = "com.lacunasoftware.webpki";
+    description = "PKI Connector";
+    path = "${config.home.homeDirectory}/.local/opt/lacuna-webpki/webpki";
+    type = "stdio";
+    allowed_extensions = [ "webpki-beta@lacunasoftware.com" "webpki@lacunasoftware.com" ];
+  };
+
   xdg.configFile."conky/conky.conf".text = ''
     conky.config = {
         alignment = 'top_left',
