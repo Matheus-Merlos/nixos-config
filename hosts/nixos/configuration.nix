@@ -158,6 +158,7 @@ in
     insomnia
     onlyoffice-desktopeditors
     claude-code
+    nix-alien
 
     kubernetes-helm
     gnumake
