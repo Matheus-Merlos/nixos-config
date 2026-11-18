@@ -158,6 +158,8 @@ in
     insomnia
     onlyoffice-desktopeditors
     claude-code
+    openspec
+    github-cli
 
     kubernetes-helm
     gnumake
