@@ -55,6 +55,9 @@ in
     networkmanager = {
       enable = true;
     };
+    extraHosts = ''
+      157.245.184.9 sigacad.com.br
+    '';
   };
 
   nixpkgs.config.allowUnfree = true;
